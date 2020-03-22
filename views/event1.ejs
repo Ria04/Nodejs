@@ -1,0 +1,224 @@
+<%-include('partials/header.ejs');-%>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Vision Computers</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script>
+    function myFunction(imgs) {
+      var expandImg = document.getElementById("expandedImg");
+      var imgText = document.getElementById("imgtext");
+      expandImg.src = imgs.src;
+      imgText.innerHTML = imgs.alt;
+      expandImg.parentElement.style.display = "block";
+    }
+    </script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      margin: 0;
+      font-family: Arial;
+      background-color: rgb(249, 248, 250);
+       }
+    
+    /* The grid: Four equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 25%;
+      padding: 10px;
+    }
+    
+    /* Style the images inside the grid */
+    .column img {
+      opacity: 0.8; 
+      cursor: pointer; 
+    }
+    
+    .column img:hover {
+      opacity: 1;
+    }
+    
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    /* The expanding image container */
+    .container {
+      position: relative;
+      display: none;
+    }
+    
+    /* Expanding image text */
+    #imgtext {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      color: white;
+      font-size: 20px;
+    }
+    
+    /* Closable button inside the expanded image */
+    .closebtn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      color: rgb(7, 7, 7);
+      font-size: 35px;
+      cursor: pointer;
+    }
+    </style>
+  </head>
+  <body>
+    
+  
+    <!-- END nav -->
+    <section class="ftco-section-3 img" style="background-image: url(images/bg-3.jpg);">
+
+      <div class="overlay">    <button class="openbtn" onclick="openNav()">☰ Menu</button>
+        <h1 class="ftco-animate" style="color: black;text-align: center;">Gallery</h1>    				
+
+        
+        <div class="container">
+
+          <div class="row d-md-flex justify-content-center">
+            <div class="col-md-9 about-video text-center">
+
+            </div>
+          </div>
+        </div>
+    </section>
+
+<section>
+  
+  <div style="text-align:center">
+    <h2>Click on the images below</h2>
+  </div>
+  
+  <!-- The four columns -->
+  <div class="container">
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+    <img id="expandedImg" style="width:100%">
+    <div id="imgtext"></div>
+  </div>
+  <div class="row">
+    <div class="column">
+      <img src="images/1.jpg"  style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="images/2.jpg"  style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="images/3.jpg"  style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="images/4.jpg"  style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="images/5.jpg"  style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="images/6.jpg"  style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="images/7.jpg"  style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="images/8.jpg" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="images/17.jpg"  style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="images/10.jpg" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="images/11.jpg"  style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="images/12.jpg"  style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="images/16.jpg"  style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="images/15.jpg"  style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="images/13.jpg" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="images/14.jpg"  style="width:100%;height:60%;" onclick="myFunction(this);">
+    </div>
+    
+  </div>
+  
+ 
+    </section>
+
+    <footer class="ftco-footer ftco-bg-dark ftco-section img" style="background-color: black;">
+    	
+      <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> | Developed by Riya Terkhedkar
+    
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+    
+    </footer>
+  
+     
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/bootstrap-datepicker.js"></script>
+  <script src="js/jquery.timepicker.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="js/google-map.js"></script>
+  <script src="js/main.js"></script>
+    
+  </body>
+</html>

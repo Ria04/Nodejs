@@ -1,0 +1,52 @@
+<%-include('partials/header.ejs');-%>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <h2 style="text-align: center;margin-top:15px;">Student Details</h2>
+    </br></br>
+    <input id="myInput" style="border-color:royalblue;border-radius: 5px;margin-left: 10px;" type="text" placeholder="Search..">
+
+
+    <div class="table-wrapper">
+        <% if(data.length){%>
+            <table class="table table-hovered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">mobile number</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Password</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="myTable">
+                    <%
+                        for(var i=0;i<(data.length);i++){
+                        %>
+                            <tr>
+                            <th scope="row"><%= data[i].id %></th>
+                            <td><%= data[i].first_name %></td>
+                            <td><%= data[i].last_name %></td>
+                            <td><%= data[i].mob_no %></td>
+                            <td>@<%= data[i].user_name %></td>
+                            <td><%= data[i].password %></td>
+                            <td><%= data[i].address%></td>
+                            <td>
+                                <a href="/activate/<%=data[i].user_name%>" target="" rel="noopener" class="btn btn-sm btn-success">Activate Account</a>
+                                <a href="/permanentdelete/<%=data[i].id%>" target="" rel="noopener" class="btn btn-sm btn-success">Permanent Delete Account</a>
+
+                            </td>
+                        </tr>
+                    <% }} else {%>
+                   
+                        <p class="text-center">User Not Found </p>
+                    <% } %>
+                </tbody>
+            </table>
+       
+    </div>
+</div>
+</body>
+</html> 

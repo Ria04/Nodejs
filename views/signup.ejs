@@ -1,0 +1,96 @@
+<html lang="en">
+<head>
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Vision Computers</title>
+    <meta charset="utf-8">
+    
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+   <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+</head>
+
+
+<body>
+   
+    <div class="" style="background-image: url('images/bg_2.jpg'); background-attachment:fixed;height:100%;">
+
+    <div class="container col-sm-12" id="mainform">
+            <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                <p><a href="/" class="btn btn-primary"style="background-color:#6f42c1;">Home</a></p>
+                                   
+                    <div class="panel panel-info">                      
+                        <div class="panel-heading"style="background-color:#6f42c1">
+                            <div class="panel-title" style="color:white";>Sign Up</div>
+                            <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="/login" style="color:white;font-size: 20px;">Login</a></div>
+                            &nbps</div> 
+                        <div class="panel-body" >
+                            <form class="form-horizontal" role="form" method="post" action="/signup" onSubmit="return checkblank(this);">
+                                <% if (message.length > 0) { %>
+                                                                                                            <div class="alert alert-success col-sm-12"><%= message %></div>
+                                                                                                <% } %>
+                                <div id="signupalert" style="display:none" class="alert alert-danger">
+                                    <p>Error:</p>
+                                    <span></span>
+                                </div>
+                                    
+                                <div class="form-group">
+                                    <label for="first_name" class="col-md-3 control-label">First Name</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="first_name" placeholder="First Name" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last_name" class="col-md-3 control-label">Last Name</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="last_name" placeholder="Last Name" required>
+                                    </div>
+                                </div>
+                                    <div class="form-group">
+                                    <label for="mob_no" class="col-md-3 control-label">Mobile Number</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="mob_no" placeholder="Mobile Number" title="provide 10 digit number" pattern="[1-9]{1}[0-9]{9}"required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="user_name" class="col-md-3 control-label">User Name</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="user_name" placeholder="User Name"required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="col-md-3 control-label">Password</label>
+                                    <div class="col-md-9">
+                                        <input type="password" class="form-control" name="password" placeholder="Password"required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last_name" class="col-md-3 control-label">address</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="address" placeholder="address"required>
+                                    </div>
+                                </div>
+ 
+                                <div class="form-group">
+                                    <!-- Button -->                                       
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <button id="btn-signup" type="submit" class="btn btn-info"style="background-color:#6f42c1"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
+
+                                    </div>
+                                </div>
+                               
+                                
+                                
+                                
+                            </form>
+                         </div>
+                    </div>
+              
+                
+         </div>
+    </div>
+   
+
+</body>
+ 
+</html>

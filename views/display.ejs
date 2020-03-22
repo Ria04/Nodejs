@@ -1,0 +1,79 @@
+<%-include('partials/header.ejs');-%>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+
+    $(document).ready(function(){
+        $("#myselect").on("change",function()
+        {
+            window.location.href= "/display/"+this.value;
+        });
+      $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#myTable tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+
+    
+    </script>
+    <h2 style="text-align: center;margin-top:15px;">Student Details</h2>
+    </br></br>
+    <input id="myInput" style="border-color:royalblue;border-radius: 5px;margin-left: 10px;" type="text" placeholder="Search..">
+    <select id="myselect"style="color:royalblue;border-radius: 5px;">
+        <option value="none">Select from the list</option>
+        <option value="0">Show All</option>
+        <option value="1">MS-CIT</option>
+        <option value="2">Basics/Ms-Office</option>
+        <option value="3">DTP</option>
+        <option value="4">Klic Tally with GST</option>
+        <option value="5">Klic Programming</option>
+        <option value="6">Klic Web Designing</option>
+        <option value="7">Specially for Professionals</option>
+        <option value="8">Specially for Ladies</option>
+       
+      </select> 
+
+    <div class="table-wrapper">
+        <% if(data.length){%>
+            <table class="table table-hovered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">mobile number</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Password</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="myTable">
+                    <%
+                        for(var i=0;i<(data.length);i++){
+                        %>
+                            <tr>
+                            <th scope="row"><%= data[i].id %></th>
+                            <td><%= data[i].first_name %></td>
+                            <td><%= data[i].last_name %></td>
+                            <td><%= data[i].mob_no %></td>
+                            <td>@<%= data[i].user_name %></td>
+                            <td><%= data[i].password %></td>
+                            <td><%= data[i].address%></td>
+                            <td>
+                                <a href="/edit/<%=data[i].user_name%>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Edit</a>
+                                <a href="/delete/<%=data[i].user_name%>" class="btn btn-sm btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    <% }} else {%>
+                   
+                        <p class="text-center">User Not Found </p>
+                    <% } %>
+                </tbody>
+            </table>
+       
+    </div>
+</div>
+</body>
+</html> 
