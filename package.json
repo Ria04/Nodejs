@@ -1,6 +1,7 @@
 {
   "name": "project",
   "version": "1.0.0",
+"main":"app.js",
   "scripts": {
     "start": "node app.js"
   },
@@ -16,5 +17,6 @@
     "req-flash": "0.0.3"
   },
   "devDependencies": {},
+  "main": "app.js",
   "description": ""
 }
