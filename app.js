@@ -11,25 +11,21 @@ const {index} = require('./routes/index');
 const {history,display,course3page,event1page,enrollform,aboutpage,permanentdeleteuser,course1page,course2page,contactpage, deleteuser, activate,edit, editpage} = require('./routes/player');
 const {signup,login,signupform,logout,loginpage} = require('./routes/user');
 
-
-const dbConfig = require("../config/db.config.js");
-const PORT = process.env.PORT||8080;
+var port = process.env.PORT||8080;
 
 // create connection to database
 // the mysql.createConnection function takes in a configuration object which contains host, user, password and the database name.
-var connection = mysql.createPool({
+module.exports = {
     host: 'us-cdbr-iron-east-01.cleardb.net',
     user: 'b9666b6c251254',
     password: 'c10571db',
     database: 'vision'
-});
-
-module.exports = connection;
+};
 
 
 
 // configure middleware
-app.set('port', process.env.PORT || PORT); // set express to use this port
+app.set('port', process.env.PORT || port); // set express to use this port
 app.set('views', __dirname + '/views'); // set express to look in this folder to render our view
 app.set('view engine', 'ejs'); // configure template engine
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -71,5 +67,5 @@ app.get('/history/v',history);
 
 // set the app to listen on the port
 app.listen(port, () => {
-    console.log(`Server running on port: ${PORT}`);
+    console.log(`Server running on port: ${port}`);
 });
