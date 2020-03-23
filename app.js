@@ -15,14 +15,19 @@ var port = process.env.PORT||8080;
 
 // create connection to database
 // the mysql.createConnection function takes in a configuration object which contains host, user, password and the database name.
-module.exports = {
+var connection = mysql.createConnection({
     host: 'us-cdbr-iron-east-01.cleardb.net',
     user: 'b9666b6c251254',
     password: 'c10571db',
-    database: 'vision'
-};
+    database: 'heroku_59c04ae27016296'
+});
 
-
+connection.connect((err) => {
+    if (err) {
+        throw err;
+    }
+    console.log('Connected to database');
+});
 
 // configure middleware
 app.set('port', process.env.PORT || port); // set express to use this port
