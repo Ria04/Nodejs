@@ -22,12 +22,8 @@ var connection = mysql.createConnection({
     database: 'heroku_59c04ae27016296'
 });
 
-connection.connect((err) => {
-    if (err) {
-        throw err;
-    }
-    console.log('Connected to database');
-});
+connection.connect();
+
 
 // configure middleware
 app.set('port', process.env.PORT || port); // set express to use this port
