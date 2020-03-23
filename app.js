@@ -3,7 +3,7 @@ const fileUpload = require('express-fileupload');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const path = require('path');
-const app = express();
+var app = express();
 var session = require('express-session');
 
 
@@ -11,7 +11,7 @@ const {index} = require('./routes/index');
 const {history,display,course3page,event1page,enrollform,aboutpage,permanentdeleteuser,course1page,course2page,contactpage, deleteuser, activate,edit, editpage} = require('./routes/player');
 const {signup,login,signupform,logout,loginpage} = require('./routes/user');
 
-var port = process.env.PORT||5000;
+var port = process.env.PORT||8080;
 
 // create connection to database
 // the mysql.createConnection function takes in a configuration object which contains host, user, password and the database name.
@@ -23,22 +23,22 @@ const db = mysql.createConnection ({
 });
 
 // connect to database
-db.connect((err) => {
+/*db.connect((err) => {
     if (err) {
         throw err;
     }
     console.log('Connected to database');
 });
-global.db = db;
+global.db = db;*/
 
 // configure middleware
-app.set('port', process.env.port || port); // set express to use this port
+app.set('port', process.env.PORT || port); // set express to use this port
 app.set('views', __dirname + '/views'); // set express to look in this folder to render our view
 app.set('view engine', 'ejs'); // configure template engine
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json()); // parse form data client
 app.use(express.static(path.join(__dirname, 'public'))); // configure express to use public folder
-app.use(fileUpload(14748364)); // configure fileupload
+//app.use(fileUpload(14748364)); // configure fileupload
 app.use(session({
   secret: 'keyboard cat',
   resave: false,
