@@ -23,13 +23,13 @@ const db = mysql.createConnection ({
 });
 
 // connect to database
-db.connect((err) => {
+/*db.connect((err) => {
     if (err) {
         throw err;
     }
     console.log('Connected to database');
 });
-global.db = db;
+global.db = db;*/
 
 // configure middleware
 app.set('port', process.env.PORT || port); // set express to use this port
