@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/home/riyo/project/views/partials/style.css">
     <title><%= title %></title>
 </head>
+
 <style>
     .table-wrapper {
         margin-top: 50px;
@@ -47,7 +48,7 @@
   .sidepanel a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 2vw;
+    font-size: 20px;
     color: #f8f4f4;
     display: block;
     transition: 0.3s;
@@ -61,11 +62,11 @@
     position: absolute;
     top: 0;
     right: 25px;
-    font-size:2vw;
+    font-size:20px;
   }
   
   .openbtn {
-    font-size: 2vw;
+    font-size: 20px;
     cursor: pointer;
     background-color: #111;
     color: white;
@@ -79,8 +80,9 @@
   </style>
   </head>
   <body>
-  
+
   <div id="mySidepanel" class="sidepanel">
+
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
     <% if(req.session.user)
     {%>
@@ -117,4 +119,5 @@
   </body>
    
  
+
 
