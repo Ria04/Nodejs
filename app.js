@@ -23,7 +23,6 @@ var connection = mysql.createConnection({
 });
 
 connection.connect();
-
 // configure middleware
 app.set('port', process.env.PORT || port); // set express to use this port
 app.set('views', __dirname + '/views'); // set express to look in this folder to render our view
