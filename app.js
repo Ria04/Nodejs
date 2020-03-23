@@ -19,11 +19,10 @@ var connection = mysql.createConnection({
     host: 'us-cdbr-iron-east-01.cleardb.net',
     user: 'b9666b6c251254',
     password: 'c10571db',
-    database: 'heroku_59c04ae27016296'
+    database: ''
 });
 
 connection.connect();
-
 
 // configure middleware
 app.set('port', process.env.PORT || port); // set express to use this port
