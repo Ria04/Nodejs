@@ -62,7 +62,7 @@ signupform:(req, res)=>{
           if (err) {
               return res.status(500).send(err);
           }
-          if (result.length > 0) {
+          if (result > 0) {
               message = 'Username already exists';
               res.render('signup.ejs', {
                   message,
