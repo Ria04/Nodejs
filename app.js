@@ -16,9 +16,9 @@ var port = process.env.PORT||8080;
 // create connection to database
 
 module.exports = {
-  HOST: "us-cdbr-iron-east-01.cleardb.net",
-  USER: "b9666b6c251254",
-  PASSWORD: "c10571db",
+  host: "us-cdbr-iron-east-01.cleardb.net",
+  user: "b9666b6c251254",
+  password: "c10571db",
   db: "heroku_59c04ae27016296"
 };
 // the mysql.createConnection function takes in a configuration object which contains host, user, password and the database name.
