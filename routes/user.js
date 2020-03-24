@@ -32,7 +32,7 @@ login:(req, res)=>{
                 message = 'Wrong Credentials.';
                res.render('login.ejs',{message: message});
             }     
-            if(results.length){
+            if(results){
                req.session.userId = results[0].id;
                req.session.user = results[0].user_name;
             
