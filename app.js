@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const path = require('path');
 var app = express();
-var session = require('express-session');
+var session = require('cookie-session');
 
 
 const {index} = require('./routes/index');
