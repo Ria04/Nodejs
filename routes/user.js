@@ -27,7 +27,10 @@ login:(req, res)=>{
          var pass= post.password;
    
          var sql="SELECT id, first_name, last_name, user_name FROM `users` WHERE `user_name`='"+name+"'and`password` = '"+pass+"'";                           
-         db.query(sql, function(err, results){      
+         db.query(sql, function(err, results){ 
+            if (err) {
+              return res.status(500).send(err);
+            }     
             if(results.length){
                req.session.userId = results[0].id;
                req.session.user = results[0].user_name;
