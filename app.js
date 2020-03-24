@@ -16,8 +16,7 @@ var port = process.env.PORT||8080;
 // create connection to database
 
 
-const db = mysql.createPool ({
-    connectionLimit : 100,
+const db = mysql.createConnection ({
     host: 'us-cdbr-iron-east-02.cleardb.net',
     user: 'b7e2437887xxxa',
     password: '0200xxx6',
