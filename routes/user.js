@@ -65,13 +65,7 @@ signupform:(req, res)=>{
           if (err) {
               return res.status(500).send(err);
           }
-          if (result.length > 0) {
-              message = 'Username already exists';
-              res.render('signup.ejs', {
-                  message,
-                  title: 'Welcome to Visiom Computers'
-              });
-          }
+          
           else{
       var sql = "INSERT INTO `users`(`first_name`,`last_name`,`mob_no`,`user_name`, `password`,`address`,`status`) VALUES ('" + fname + "','" + lname + "','" + mob + "','" + name + "','" + pass + "','" + address + "','Y')";
 
