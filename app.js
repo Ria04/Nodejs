@@ -14,13 +14,13 @@ const {signup,login,signupform,logout,loginpage} = require('./routes/user');
 var port = process.env.PORT||8080;
 
 // create connection to database
-const dbConfig = require("../config/db.config.js");
 
-const db = mysql.createPool ({
-     host: dbConfig.host,
-  user: dbConfig.user,
-  password: dbConfig.password,
-  database: dbConfig.database
+
+const db = mysql.createConnection ({
+    host: 'us-cdbr-iron-east-02.cleardb.net',
+    user: 'b7e2437887xxxa',
+    password: '0200xxx6',
+    database: 'heroku_7643ec736354xxx'
 });
 
 // connect to database
