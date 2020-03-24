@@ -3,7 +3,7 @@ const fs = require('fs');
 module.exports = {
     event1page: (req, res) => {
         res.render('event1.ejs', {
-            title: 'Welcome to Visiom Computers'
+            title: 'Vision Computers'
             ,message: '',
             username:req.session.user,
             req:req
@@ -18,7 +18,7 @@ module.exports = {
                 return res.status(500).send(err);
             }
                     res.render('course3.ejs', {
-                    title: 'Welcome to Visiom Computers'
+                    title: 'Vision Computers'
                     ,
                     data:result,
                     req:req
@@ -44,7 +44,7 @@ db.query(query, (err, result) => {
         return res.status(500).send(err);
     }
             res.render('display.ejs', {
-            title: 'Welcome to Visiom Computers'
+            title: 'Vision Computers'
             ,
             data:result,
             req:req
@@ -63,7 +63,7 @@ db.query(query, (err, result) => {
             return res.status(500).send(err);
         }
                 res.render('history.ejs', {
-                title: 'Welcome to Visiom Computers'
+                title: 'Vision Computers'
                 ,
                 data:result,
                 req:req
@@ -76,7 +76,7 @@ db.query(query, (err, result) => {
 
     contactpage: (req, res) => {
         res.render('contact.ejs', {
-            title: 'Welcome to Visiom Computers'
+            title: 'Vision Computers'
             ,message: '',
             username:req.session.user,
             req:req
@@ -84,7 +84,7 @@ db.query(query, (err, result) => {
     },
     course1page: (req, res) => {
         res.render('course1.ejs', {
-            title: 'Welcome to Visiom Computers',
+            title: 'Vision Computers',
             username:req.session.user,
             req:req     
     });
@@ -92,7 +92,7 @@ db.query(query, (err, result) => {
     course2page: (req, res) => {
         
             res.render('course2.ejs', {
-                title: 'Welcome to Visiom Computers' ,
+                title: 'Vision Computers' ,
                 username:req.session.user,
             req:req     
         });
@@ -120,7 +120,7 @@ db.query(query, (err, result) => {
 
     aboutpage: (req, res) => {
         res.render('about.ejs', {
-            title: 'Welcome to Visiom Computers'
+            title: 'Vision Computers'
             ,message: '',
             username:req.session.user,
             req:req

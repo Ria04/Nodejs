@@ -66,7 +66,7 @@ signupform:(req, res)=>{
               message = 'Username already exists';
               res.render('signup.ejs', {
                   message,
-                  title: 'Welcome to Visiom Computers'
+                  title: 'Vision Computers'
               });
           }
           else{
