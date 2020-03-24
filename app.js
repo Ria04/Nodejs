@@ -16,12 +16,15 @@ var port = process.env.PORT||8080;
 // create connection to database
 
 
-var db = { host : 'us-cdbr-iron-east-02.cleardb.net', user : 'b7e2437887xxxa', password : '0200xxx6', database : 'heroku_7643ec736354xxx',};
-var connection = mysql.createConnection(db);
-
+const db = mysql.createConnection ({
+    host: 'us-cdbr-iron-east-01.cleardb.net',
+    user: 'b82e8aeaba1a6c',
+    password: 'fe3aded3',
+    database: 'heroku_8ffbed58d9122e3'
+});
 
 // connect to database
-
+module.exports = db;
 global.db = db;
 // the mysql.createConnection function takes in a configuration object which contains host, user, password and the database name.
 
