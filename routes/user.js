@@ -27,21 +27,18 @@ login:(req, res)=>{
          var pass= post.password;
    
          var sql="SELECT id, first_name, last_name, user_name FROM `users` WHERE `user_name`='"+name+"'and`password` = '"+pass+"'";                           
-         db.query(sql, function(err, results){ 
-            if (err) {
-                message = 'Wrong Credentials.';
-               res.render('login.ejs',{message: message});
-            }     
-            if(results){
+         db.query(sql, function(err, results){      
+            if(results.length){
                req.session.userId = results[0].id;
                req.session.user = results[0].user_name;
             
                console.log(results[0].id);
                res.redirect('/');
             }
-            
-               
-            
+            else{
+               message = 'Wrong Credentials.';
+               res.render('login.ejs',{message: message});
+            }
                     
          });
       } else {
@@ -65,7 +62,13 @@ signupform:(req, res)=>{
           if (err) {
               return res.status(500).send(err);
           }
-          
+          if (result.length > 0) {
+              message = 'Username already exists';
+              res.render('signup.ejs', {
+                  message,
+                  title: 'Welcome to Visiom Computers'
+              });
+          }
           else{
       var sql = "INSERT INTO `users`(`first_name`,`last_name`,`mob_no`,`user_name`, `password`,`address`,`status`) VALUES ('" + fname + "','" + lname + "','" + mob + "','" + name + "','" + pass + "','" + address + "','Y')";
 
