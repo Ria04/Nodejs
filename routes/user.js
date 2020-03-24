@@ -39,10 +39,12 @@ login:(req, res)=>{
                console.log(results[0].id);
                res.redirect('/');
             }
-           
+            
                
-         
-       else {
+            
+                    
+         });
+      } else {
          res.render('login.ejs',{message: message});
       }         
 },
