@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const path = require('path');
 var app = express();
-var session = require('cookie-session');
+var session = require('express-session');
 
 
 const {index} = require('./routes/index');
@@ -40,7 +40,7 @@ app.use(session({
   secret: 'keyboard cat',
   resave: false,
   saveUninitialized: true,
-  cookie: { maxAge: 60000 }
+  maxAge: 60000 
 }))
 
 
