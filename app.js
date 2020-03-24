@@ -16,18 +16,16 @@ var port = process.env.PORT||8080;
 // create connection to database
 
 
-const dbConfig = require("../config/db.config.js");
-
-var connection = mysql.createPool({
-  host: dbConfig.HOST,
-  user: dbConfig.USER,
-  password: dbConfig.PASSWORD,
-  database: dbConfig.DB
+const db = mysql.createConnection ({
+    host: 'us-cdbr-iron-east-02.cleardb.net',
+    user: 'b7e2437887xxxa',
+    password: '0200xxx6',
+    database: 'heroku_7643ec736354xxx'
 });
 
-module.exports = connection;
-
-global.connection = db;
+// connect to database
+module.exports = db;
+global.db = db;
 // the mysql.createConnection function takes in a configuration object which contains host, user, password and the database name.
 
 // configure middleware
