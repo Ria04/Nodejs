@@ -28,7 +28,7 @@ login:(req, res)=>{
    
          var sql="SELECT id, first_name, last_name, user_name FROM `users` WHERE `user_name`='"+name+"'and`password` = '"+pass+"'";                           
          db.query(sql, function(err, results){      
-            if(results){
+            if(results.length){
                req.session.userId = results[0].id;
                req.session.user = results[0].user_name;
             
@@ -62,7 +62,7 @@ signupform:(req, res)=>{
           if (err) {
               return res.status(500).send(err);
           }
-          if (result > 0) {
+          if (result.length > 0) {
               message = 'Username already exists';
               res.render('signup.ejs', {
                   message,
