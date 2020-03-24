@@ -29,7 +29,8 @@ login:(req, res)=>{
          var sql="SELECT id, first_name, last_name, user_name FROM `users` WHERE `user_name`='"+name+"'and`password` = '"+pass+"'";                           
          db.query(sql, function(err, results){ 
             if (err) {
-              return res.status(500).send(err);
+                message = 'Wrong Credentials.';
+               res.render('login.ejs',{message: message});
             }     
             if(results.length){
                req.session.userId = results[0].id;
@@ -38,12 +39,9 @@ login:(req, res)=>{
                console.log(results[0].id);
                res.redirect('/');
             }
-            else{
-               message = 'Wrong Credentials.';
-               res.render('login.ejs',{message: message});
-            }
-                    
-         });
+           
+               
+         
       } else {
          res.render('login.ejs',{message: message});
       }         
