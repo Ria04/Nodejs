@@ -25,6 +25,7 @@ const db = mysql.createConnection ({
 
 // connect to database
 module.exports = db;
+global.db = db;
 // the mysql.createConnection function takes in a configuration object which contains host, user, password and the database name.
 
 // configure middleware
