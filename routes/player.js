@@ -126,7 +126,14 @@ db.query(query, (err, result) => {
             req:req
         });
     },
-   
+    teacher: (req, res) => {
+        res.render('teacher.ejs', {
+            title: 'Vision Computers'
+            ,message: '',
+            username:req.session.user,
+            req:req
+        });
+    },
 
     editpage: (req, res) => {
         let username = req.params.user_name;

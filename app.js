@@ -8,7 +8,7 @@ var session = require('express-session');
 
 
 const {index} = require('./routes/index');
-const {history,display,course3page,event1page,enrollform,aboutpage,permanentdeleteuser,course1page,course2page,contactpage, deleteuser, activate,edit, editpage} = require('./routes/player');
+const {history,teacher,display,course3page,event1page,enrollform,aboutpage,permanentdeleteuser,course1page,course2page,contactpage, deleteuser, activate,edit, editpage} = require('./routes/player');
 const {signup,login,signupform,logout,loginpage} = require('./routes/user');
 
 var port = process.env.PORT||8080;
@@ -47,6 +47,7 @@ app.use(session({
 // routes for the app
 
 app.get('/about', aboutpage);
+app.get('/teacher', teacher);
 app.get('/contact', contactpage);
 app.get('/course1', course1page);
 app.get('/course2', course2page);
